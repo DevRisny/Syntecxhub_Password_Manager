@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "syntecxhub-password-manager"
+version = "2.0.0"
+description = "Local command-line password manager: AES-256-GCM, scrypt, audit, auto-lock"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Junaideen Risny Suha" }]
+keywords = ["password-manager", "cryptography", "aes-gcm", "scrypt", "cybersecurity"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Security :: Cryptography",
+  "Environment :: Console",
+]
+dependencies = ["cryptography>=42.0"]
+
+[project.optional-dependencies]
+clipboard = ["pyperclip>=1.8"]
+
+[project.scripts]
+pwmanager = "password_manager:main"
+
+[tool.setuptools]
+py-modules = ["password_manager"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]

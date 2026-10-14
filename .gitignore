@@ -1,0 +1,9 @@
+vault.json
+vault.json.bak
+*.tmp
+.vault-*
+__pycache__/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
